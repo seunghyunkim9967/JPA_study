@@ -11,7 +11,7 @@ public class JpaMain {
 
         EntityTransaction tx = em.getTransaction();
         tx.begin();
-
+ 
         try{
 //            Member member = new Member();
 //            member.setId(2L);
@@ -28,7 +28,7 @@ public class JpaMain {
 //            //em.persist(member);
 ////            findMember.setName("HelloJPA");
 //            tx.commit();
- 
+
             //영속
 //            Member findMember1 = em.find(Member.class, 101L);
 //            Member findMember2 = em.find(Member.class, 101L);
