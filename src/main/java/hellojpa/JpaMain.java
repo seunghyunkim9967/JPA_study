@@ -13,39 +13,30 @@ public class JpaMain {
         tx.begin();
  
         try{
-//            Member member = new Member();
-//            member.setId(2L);
-//            member.setName("HelloB");
-//            List<Member> result = em.createQuery("select m from Member as m where m.name = 'HelloB'", Member.class)
-////                    .setFirstResult(5)
-////                    .setMaxResults(8)
-//                    .getResultList();
-//            for (Member member : result) {
-//                System.out.println("member.name = " + member.getName());
-//            }
-////            Member findMember = em.find(Member.class, 1L);
-////            System.out.println("findMember.id = " + findMember.getId());
-//            //em.persist(member);
-////            findMember.setName("HelloJPA");
-//            tx.commit();
 
-            //영속
-//            Member findMember1 = em.find(Member.class, 101L);
-//            Member findMember2 = em.find(Member.class, 101L);
-//            System.out.println("findMember = " + findMember1.getId());
-//            System.out.println("findMember = " + findMember2.getId());
-//            Member member = em.find(Member.class,150L);
-//            member.setName("AAAAA");
-////            Member member = new Member(200L,"member200");
-////            em.persist(member);
-//            em.clear();
-//            Member member2 = em.find(Member.class,150L);
-//            System.out.println("======================" + member2.getId());
+            // 저장
+            Team team = new Team();
+            team.setName("TeamA");
+            em.persist(team);
+
             Member member = new Member();
-            member.setUsername("C");
-            System.out.println("===============");
+            member.setUsername("member1");
+            member.setTeam(team);
+//            member.setTeamId(team.getId());
             em.persist(member);
-            System.out.println("===============");
+
+            em.flush();
+            em.clear();
+
+            Member findMember = em.find(Member.class, member.getId());
+
+            Team findTeam = findMember.getTeam();
+            System.out.println("findTeam = " + findTeam.getName());
+
+            //
+            Team newTeam = em.find(Team.class, 100L);
+            findMember.setTeam(newTeam);
+
             tx.commit();
         } catch (Exception e) {
             tx.rollback();
