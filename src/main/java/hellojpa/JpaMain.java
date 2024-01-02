@@ -34,7 +34,7 @@ public class JpaMain {
             System.out.println("findTeam = " + findTeam.getName());
 
             //
-            Team newTeam = em.find(Team.class, 100L);
+            Team newTeam = em.find(Team.class, 200L);
             findMember.setTeam(newTeam);
 
             tx.commit();
