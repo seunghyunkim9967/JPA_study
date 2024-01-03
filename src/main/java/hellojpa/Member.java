@@ -27,9 +27,11 @@ public class Member {
         return team;
     }
 
-    public void setTeam(Team team) {
-        this.team = team;
-    }
+//    public void changeTeam(Team team) {
+//        this.team = team;
+//
+//        team.getMembers().add(this);// 순수 객체 상태를 고려해서 항상 양쪽에 값 설정 (연관관계 편의 메소드)
+//    }
 
     public Long getId() {
         return id;
@@ -43,10 +45,22 @@ public class Member {
         return username;
     }
 
+    public void setTeam(Team team) {
+        this.team = team;
+    }
+
     public void setUsername(String username) {
         this.username = username;
     }
 
+    @Override
+    public String toString() {
+        return "Member{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", team=" + team +
+                '}';
+    }
 //    public Long getTeamId() {
 //        return teamId;
 //    }
