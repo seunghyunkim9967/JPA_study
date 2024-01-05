@@ -1,19 +1,15 @@
 package hellojpa;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @Entity
 public class Locker {
     @Id
     @GeneratedValue
-    private Long Id;
-
+    private Long id;
     private String name;
 
-    @OneToOne(mappedBy = "locker")//Read Only
-    private Member member;
+//    @OneToOne(mappedBy = "locker")//Read Only
+//    private Member member;
 
 }

@@ -1,6 +1,7 @@
 package hellojpa;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class JpaMain {
@@ -14,31 +15,19 @@ public class JpaMain {
  
         try{
 
-//            // 저장
-//            Team team = new Team();
-//            team.setName("TeamA");
-//
-//            em.persist(team);
-//
-//            Member member = new Member();
-//            member.setUsername("member1");
-//            //연관관계의 주인에만 값 설정
-////            member.changeTeam(team);
-//            em.persist(member);
-//
-////            team.addMember(member);
-////            team.getMembers().add(member); // 순수 객체 상태를 고려해서 항상 양쪽에 값 설정
-//
-////            em.flush();
-////            em.clear();
-//
-//            Team findTeam = em.find(Team.class, team.getId()); // 1차 캐시
-////            List<Member> members = findTeam.getMembers();
-//
-////            for (Member m : members) {
-////                System.out.println("m = " + m.getUsername());
-////            }
-//            System.out.println(findTeam);
+
+            Member member = new Member();
+            member.setCreatedBy(("kim"));
+            member.setUsername("user1");
+            member.setCreatedDate(LocalDateTime.now());
+            em.persist(member);
+
+            em.flush();
+            em.clear();
+
+//            Movie findMove = em.find(Movie.class, movie.getId());
+//            System.out.println("findMove = " + findMove);
+
             tx.commit();
         } catch (Exception e) {
             tx.rollback();
