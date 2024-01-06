@@ -28,6 +28,7 @@ public class Member extends BaseEntity{
         return team;
     }
 
+
 //    public void changeTeam(Team team) {
 //        this.team = team;
 //
