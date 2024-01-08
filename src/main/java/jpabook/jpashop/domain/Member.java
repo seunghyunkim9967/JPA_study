@@ -5,15 +5,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Member {
+public class Member extends BaseEntity {
 
     @Id @GeneratedValue
     @Column(name = "MEMBER_ID")
     private long id;
     private String name;
-    private String city;
-    private String street;
-    private String zipcode;
+//    private String city;
+//    private String street;
+//    private String zipcode;
+
+    private Address address;
 
     @OneToMany(mappedBy = "member")
     private List<Order> orders = new ArrayList<>();
@@ -27,17 +29,6 @@ public class Member {
         return name;
     }
 
-    public String getCity() {
-        return city;
-    }
-
-    public String getStreet() {
-        return street;
-    }
-
-    public String getZipcode() {
-        return zipcode;
-    }
 
     public void setId(long id) {
         this.id = id;
@@ -47,15 +38,19 @@ public class Member {
         this.name = name;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public Address getAddress() {
+        return address;
     }
 
-    public void setStreet(String street) {
-        this.street = street;
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
-    public void setZipcode(String zipcode) {
-        this.zipcode = zipcode;
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
     }
 }
