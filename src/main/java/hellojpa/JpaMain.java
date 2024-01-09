@@ -71,27 +71,27 @@ public class JpaMain {
 //            Parent findParent = em.find(Parent.class, parent.getId());
 //            findParent.getChildList().remove(0);
 
-            Member member = new Member();
-            member.setUsername(("member1"));
-            member.setHomeAddress(new Address("homecity","street","10"));
-//            member.setWorkPeriod(new Period());
-
-            member.getFavoriteFoods().add("치킨");
-            member.getFavoriteFoods().add("피자");
-            member.getFavoriteFoods().add("족발");
-
-            member.getAddressHistory().add(new AddressEntity("old1","street","10"));
-            member.getAddressHistory().add(new AddressEntity("old2","street","10"));
-
-
-
-            em.persist(member);
-
-            em.flush();
-            em.clear();
-
-            System.out.println("===============  STRAT ===============");
-            Member findMember = em.find(Member.class, member.getId());
+//            Member member = new Member();
+//            member.setUsername(("member1"));
+//            member.setHomeAddress(new Address("homecity","street","10"));
+////            member.setWorkPeriod(new Period());
+//
+//            member.getFavoriteFoods().add("치킨");
+//            member.getFavoriteFoods().add("피자");
+//            member.getFavoriteFoods().add("족발");
+//
+//            member.getAddressHistory().add(new AddressEntity("old1","street","10"));
+//            member.getAddressHistory().add(new AddressEntity("old2","street","10"));
+//
+//
+//
+//            em.persist(member);
+//
+//            em.flush();
+//            em.clear();
+//
+//            System.out.println("===============  STRAT ===============");
+//            Member findMember = em.find(Member.class, member.getId());
 
 //            List<Address> addressHistory = findMember.getAddressHistory();
 //
@@ -111,6 +111,23 @@ public class JpaMain {
 //            findMember.getAddressHistory().add(new Address("newCity1","street","10"));
 
 
+//            List<Member> result = em.createQuery(
+//                    "select m from Member m WHERE m.username like '%kim%'",
+//                    Member.class
+//            ).getResultList();
+//
+//            for (Member member : result) {
+//                System.out.println("member = " + member);
+//            }
+
+//            //Criteria 사용 준비
+//            CriteriaBuilder cb = em.getCriteriaBuilder();
+//            CriteriaQuery<Member> query = cb.createQuery(Member.class);
+//            //루트 클래스 (조회를 시작할 클래스)
+//            Root<Member> m = query.from(Member.class);
+//            //쿼리 생성 CriteriaQuery<Member> cq =
+//            query.select(m).where(cb.equal(m.get("username"), “kim”));
+//            List<Member> resultList = em.createQuery(cq).getResultList();
 
             tx.commit();
         } catch (Exception e) {
