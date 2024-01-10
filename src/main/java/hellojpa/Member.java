@@ -9,7 +9,7 @@ import java.util.*;
 import static javax.persistence.CascadeType.ALL;
 
 @Entity
-public class Member extends BaseEntity{
+public class Member {
 
     @Id @GeneratedValue
     @Column(name = "MEMBER_ID")
