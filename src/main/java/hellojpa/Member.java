@@ -37,11 +37,6 @@ public class Member {
     @Column(name = "FOOD_NAME")
     private Set<String> favoriteFoods = new HashSet<>();
 
-//    @ElementCollection
-//    @CollectionTable(name = "ADDRESS", joinColumns =
-//            @JoinColumn(name = "MEMBER_ID")
-//    )
-//    private List<Address> addressHistory = new ArrayList<>();
 
     @OneToMany(cascade = ALL, orphanRemoval = true)
     @JoinColumn(name = "MEMBER_ID")
@@ -76,12 +71,6 @@ public class Member {
     }
 
 
-//    public void changeTeam(Team team) {
-//        this.team = team;
-//
-//        team.getMembers().add(this);// 순수 객체 상태를 고려해서 항상 양쪽에 값 설정 (연관관계 편의 메소드)
-//    }
-
     public Long getId() {
         return id;
     }
@@ -102,13 +91,6 @@ public class Member {
         this.username = username;
     }
 
-//    public Long getTeamId() {
-//        return teamId;
-//    }
-//
-//    public void setTeamId(Long teamId) {
-//        this.teamId = teamId;
-//    }
 
 
     public Set<String> getFavoriteFoods() {
@@ -118,14 +100,6 @@ public class Member {
     public void setFavoriteFoods(Set<String> favoriteFoods) {
         this.favoriteFoods = favoriteFoods;
     }
-
-//    public List<Address> getAddressHistory() {
-//        return addressHistory;
-//    }
-//
-//    public void setAddressHistory(List<Address> addressHistory) {
-//        this.addressHistory = addressHistory;
-//    }
 
 
     public List<AddressEntity> getAddressHistory() {

@@ -16,6 +16,22 @@ public class JpaMain {
         tx.begin();
  
         try{
+//            --ex1
+//            DROP TABLE ALBUM ;
+//            DROP TABLE BOOK ;
+//            DROP TABLE ITEM ;
+//            DROP TABLE MOVIE ;
+//            DROP TABLE MEMBER;
+//            DROP TABLE ADDRESS ;
+//            DROP TABLE ADDRESSENTITY ;
+//            DROP TABLE CHILD ;
+//            DROP TABLE FAVORIT_FOOD ;
+//            DROP TABLE MEMBER;
+//            DROP TABLE MY_SEQUENCES ;
+//            DROP TABLE PARENT ;
+//            DROP TABLE TEAM ;
+
+
             tx.commit();
         } catch (Exception e) {
             tx.rollback();
@@ -25,7 +41,6 @@ public class JpaMain {
         }
 
         emf.close();
-        //System.out.println("HI");
     }
 
 
