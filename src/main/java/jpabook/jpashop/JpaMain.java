@@ -23,7 +23,7 @@ public class JpaMain {
 
             Book book = new Book();
 //            book.setName("JPA");
-//            book.setAuthor("김승현");
+//            book.setAuthor("김승현커밋테스트");
 
             em.persist(book);
 
