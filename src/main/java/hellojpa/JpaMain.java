@@ -27,7 +27,7 @@ public class JpaMain {
 //
 //            페치조인 DISTINCT (JPQL)
 //                    SQL DISTINCT + 엔티티 중복 제거
-//
+//            JPASHOP 커밋테스트:
 //            페치 조인 특징과 한계
 //            - 페치 조인 대상 별칭 줄 수 없다. (하이버네이트 가능하지만 사용X)
 //            - 둘 이상의 컬렉션은 페치조인 안됨
